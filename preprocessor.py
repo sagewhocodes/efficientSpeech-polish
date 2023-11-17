@@ -146,8 +146,6 @@ class Preprocessor:
                 n_frames * self.hop_length / self.sampling_rate / 3600
             )
         )
-        import pdb
-        pdb.set_trace()
         random.shuffle(out)
         out = [r for r in out if r is not None]
 

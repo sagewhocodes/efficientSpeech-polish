@@ -38,7 +38,6 @@ def get_hifigan(checkpoint="hifigan/LJ_V2/generator_v2", infer_device=None, verb
         ckpt = torch.load(checkpoint, map_location=torch.device(infer_device))
     else:
         ckpt = torch.load(checkpoint)
-        #ckpt = torch.load("hifigan/generator_LJSpeech.pth.tar")
     vocoder.load_state_dict(ckpt["generator"])
     vocoder.eval()
     vocoder.remove_weight_norm()
